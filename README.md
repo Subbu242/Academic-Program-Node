@@ -48,24 +48,24 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 Admin:-\
 Username:- Subhash\
-Password:- Subhash@22\
+Password:- Subhash@22
 
 
-Student:-
-Username:- Jake
+Student:-\
+Username:- Jake\
 Password:- Jake@22
 
 
-Instructor:-
-Username:- Durga
+Instructor:-\
+Username:- Durga\
 Password:- Durga@22
 
 
-Quality Assurance Officer:-
-Username:- Varshith
+Quality Assurance Officer:-\
+Username:- Varshith\
 Password:- Varshith@4
 
 
-Program Coordinator:-
-Username:- Ajay
+Program Coordinator:-\
+Username:- Ajay\
 Password:- Ajay@22
