@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3308
--- Generation Time: Nov 11, 2024 at 05:22 AM
+-- Generation Time: May 16, 2025 at 12:16 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.1
 
@@ -64,11 +64,12 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`Cid`, `courseCode`, `courseName`, `courseContent`, `programObjective`, `instructorID`, `ProgramID`) VALUES
-(1, 'CS101', 'Data Structures and Algorithms', 'Time and Space complexity of algorithms,Arrays,Linked Lists,Trees,Heaps,Graphs,Stacks & Queues,Hash Table,Tries,Recursion,Dynamic Programming', 'Ethical practitioners in computer science, software engineering and related fields.', 4, 1),
+(1, 'CS101', 'Data Structures and Algorithms', 'Time and Space complexity of algorithms,Arrays,Linked Lists,Trees,Heaps,Graphs,Stacks & Queues,Hash Table,Tries,Recursion,Dynamic Programming', 'Demonstrate a breadth and depth of knowledge in the discipline of computer science.', 4, 1),
 (2, 'CS102', 'Computer Organization', 'C programming language,Data representation,Machine-level code and elements of code compilation,Computer arithmetic,Performance evaluation and optimization,Memory organization and management', 'Demonstrate comprehension of modern software engineering principles.', 4, 1),
 (3, 'CS103', 'Operating Systems', 'Process Management,IO Management,Memory Management,Security,File System Management', 'Demonstrate a breadth and depth of knowledge in the discipline of computer science.', 4, 1),
 (4, 'CS104', 'Artificial Intelligence', 'Introduction to Artificial Intelligence,Perception and Intelligence,Algorithms in AI,Neural Networks,Reinforcement Learning,Bayesian Networks', 'Demonstrate proficiency in problem-solving techniques using the computer.', 5, 1),
-(5, 'CS105', 'Machine Learning', 'linear discriminants, neural networks, decision trees, support vector machines, supervised learning, and unsupervised learning', 'Demonstrate proficiency in at least two high-level programming languages and two operating systems.', 5, 1);
+(5, 'CS105', 'Machine Learning', 'linear discriminants, neural networks, decision trees, support vector machines, supervised learning, and unsupervised learning', 'Demonstrate proficiency in at least two high-level programming languages and two operating systems.', 5, 1),
+(23, 'cs234', 'adv se', 'Computer Architecture, Computer programming, Software Development, Open source software, Programming principles, Software design', 'Employ critical thinking skills when evaluating issues in criminology and criminal justice.', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -225,7 +226,9 @@ INSERT INTO `studentinstructormessage` (`SIMid`, `studentID`, `instructorID`, `m
 (18, 2, 4, 'Good Sir. What about you?', 'true', 2),
 (19, 2, 4, 'Same here John!', 'true', 4),
 (25, 3, 5, 'Hey Abhinay', 'true', 5),
-(26, 3, 5, 'Hello ma\'am!', 'true', 3);
+(26, 3, 5, 'Hello ma\'am!', 'true', 3),
+(28, 2, 4, 'Good to know!', 'true', 2),
+(29, 2, 4, 'hello\n', 'true', 4);
 
 -- --------------------------------------------------------
 
@@ -235,7 +238,7 @@ INSERT INTO `studentinstructormessage` (`SIMid`, `studentID`, `instructorID`, `m
 
 CREATE TABLE `users` (
   `Uid` int(11) NOT NULL,
-  `email` varchar(20) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `role` varchar(50) NOT NULL
@@ -246,15 +249,14 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`Uid`, `email`, `username`, `password`, `role`) VALUES
-(1, 'subhusubhash24@gmail', 'Subhash', 'Subhash22', 'admin'),
-(2, 'john@gmail.com', 'John', 'John@1234', 'Student'),
-(3, 'abhinay96710@gmail.c', 'Abhinay', 'Abhinay@123', 'Student'),
-(4, 'subhusushu@gmail.com', 'Sushanth', 'Sushanth@22', 'Instructor'),
+(2, 'jake@gmail.com', 'Jake', 'Jake@22', 'Student'),
+(3, 'subhash@gmail.com', 'Subhash', 'Subhash@22', 'admin'),
+(4, 'durga@gmail.com', 'Durga', 'Durga@22', 'Instructor'),
 (5, 'rashmi@gmail.com', 'Rashmi', 'Rashmi@22', 'Instructor'),
-(6, 'jake@gmail.com', 'Jake', 'Jake@22', 'Quality Assurance Officer'),
+(6, 'varshith@gmail.com', 'Varshith', 'Varshith@4', 'Quality Assurance Officer'),
 (7, 'ajay@gmail.com', 'Ajay', 'Ajay@22', 'Program Coordinator'),
-(8, 'manvith@gmail.com', 'Manvith', 'Manvith@22', 'Program Coordinator'),
-(9, 'nikhil@gmail.com', 'Nikhil', 'Nikhil@22', 'Program Coordinator');
+(9, 'nikhil@gmail.com', 'Nikhil', 'Nikhil@22', 'Program Coordinator'),
+(10, 'manvith@gmail.com', 'Manvith', 'Manvith@22', 'Program Coordinator');
 
 -- --------------------------------------------------------
 
@@ -276,13 +278,14 @@ CREATE TABLE `userscourse` (
 --
 
 INSERT INTO `userscourse` (`id`, `Uid`, `Cid`, `Score`, `Grades`, `Feedback`) VALUES
-(1, 2, 1, 75, 'A', 'Excellent'),
+(1, 2, 1, 25, 'A', 'Excellent'),
 (2, 2, 2, 60, 'C', 'Good. Can score well if more work is put in.'),
 (3, 2, 3, 20, 'E', 'Poor. A lot of extra effort must be put in'),
 (4, 3, 1, 100, 'A', 'Excellent. Keep it up.'),
 (5, 3, 2, 50, 'C', 'Can do better'),
 (6, 3, 3, 75, 'B', 'Very good. You have the potential and can Score well'),
-(7, 3, 4, 88, 'A', 'Very Good. Keep it up.');
+(7, 3, 4, 88, 'A', 'Very Good. Keep it up.'),
+(11, 2, 23, 0, '', '');
 
 --
 -- Indexes for dumped tables
@@ -344,7 +347,7 @@ ALTER TABLE `userscourse`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `Cid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `Cid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `migrations`
@@ -356,13 +359,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `programobjectives`
 --
 ALTER TABLE `programobjectives`
-  MODIFY `POid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `POid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `programs`
 --
 ALTER TABLE `programs`
-  MODIFY `Pid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `Pid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `studentcoordinatormessage`
@@ -374,19 +377,19 @@ ALTER TABLE `studentcoordinatormessage`
 -- AUTO_INCREMENT for table `studentinstructormessage`
 --
 ALTER TABLE `studentinstructormessage`
-  MODIFY `SIMid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `SIMid` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `Uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `Uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `userscourse`
 --
 ALTER TABLE `userscourse`
-  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
