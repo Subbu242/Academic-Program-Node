@@ -46,9 +46,9 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ### LOGIN CREDENTIALS:-
 
-Admin:-
-Username:- Subhash
-Password:- Subhash@22
+Admin:-\
+Username:- Subhash\
+Password:- Subhash@22\
 
 
 Student:-
